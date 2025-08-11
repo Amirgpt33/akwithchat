@@ -1,0 +1,131 @@
+/* Root variables and theming */
+:root {
+  --brand-start: #06b6d4;
+  --brand-end: #10b981;
+  --surface: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.18);
+}
+
+html.dark {
+  --surface: rgba(0, 0, 0, 0.35);
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+/* Animated gradient background utility */
+.animated-gradient {
+  background: linear-gradient(120deg, var(--brand-start), var(--brand-end), #3b82f6);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism card */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+}
+
+/* Gradient border wrapper */
+.gradient-border {
+  position: relative;
+  border-radius: 1rem;
+  isolation: isolate;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg, var(--brand-start), var(--brand-end));
+  border-radius: inherit;
+  z-index: -2;
+}
+.gradient-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--surface);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Buttons with shiny sweep */
+.btn-gradient {
+  position: relative;
+  overflow: hidden;
+}
+.btn-gradient::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+.btn-gradient:hover::after { left: 150%; }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(24px) scale(0.98); transition: all 700ms cubic-bezier(.21,1,.21,1); }
+.reveal-visible { opacity: 1; transform: translateY(0) scale(1); }
+
+/* 3D tilt hover effect base (JS updates CSS variables) */
+.tilt {
+  transform: perspective(1000px) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(var(--tz, 0));
+  transform-style: preserve-3d;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.tilt:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+
+/* Slider / carousel */
+.slider {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+}
+.slide { scroll-snap-align: center; }
+
+/* Collapsible (FAQ) */
+.collapsible-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 350ms ease;
+}
+
+/* Header blur after scroll */
+.header-blur {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Floating shapes for hero */
+.shape {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.35;
+  animation: float 12s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-12px) translateX(8px) scale(1.05); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+/* Utilities */
+.shadow-glow { box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35), 0 0 0 1px rgba(16, 185, 129, 0.25) inset; }
+.border-dashed-round { border: 2px dashed rgba(255,255,255,0.2); border-radius: 1rem; }

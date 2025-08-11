@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ur" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>بکنگ | Prime Driving School</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+  <header data-header class="fixed inset-x-0 top-0 z-50">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/index.html" class="flex items-center gap-2 font-semibold">
+          <span class="w-8 h-8 rounded-lg animated-gradient"></span>
+          <span>Prime Driving School</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="/index.html" class="hover:text-brand-500">ہوم</a>
+          <a href="/courses.html" class="hover:text-brand-500">کورسز</a>
+          <a href="/booking.html" class="hover:text-brand-500">بکنگ</a>
+          <a href="/contact.html" class="hover:text-brand-500">رابطہ</a>
+          <button aria-label="Theme" data-toggle-theme class="ml-2 p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-800">🌗</button>
+        </div>
+        <button aria-expanded="false" aria-label="Menu" data-toggle-mobile class="md:hidden p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-800">☰</button>
+      </div>
+      <div data-mobile-menu class="md:hidden hidden pb-4">
+        <div class="flex flex-col gap-2 p-3 rounded-lg glass mt-2">
+          <a href="/index.html" class="py-2">ہوم</a>
+          <a href="/courses.html" class="py-2">کورسز</a>
+          <a href="/booking.html" class="py-2">بکنگ</a>
+          <a href="/contact.html" class="py-2">رابطہ</a>
+          <button data-toggle-theme class="mt-2 py-2 rounded-md bg-slate-200 dark:bg-slate-800">تھیم تبدیل کریں</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-24 pb-16">
+    <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold mb-6">اپنی کلاس بک کریں</h1>
+
+      <!-- Progress bar -->
+      <div class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden mb-6">
+        <div class="h-full bg-emerald-500 transition-all" style="width: 25%" data-progress></div>
+      </div>
+
+      <form id="bookingForm" class="space-y-6">
+        <!-- Step 1: Personal info -->
+        <div data-step>
+          <div class="glass p-6 rounded-xl space-y-4">
+            <h2 class="text-xl font-semibold">ذاتی معلومات</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="flex flex-col gap-1">
+                <span class="text-sm">نام</span>
+                <input required name="name" type="text" class="px-3 py-2 rounded-md bg-slate-100 dark:bg-slate-800" />
+              </label>
+              <label class="flex flex-col gap-1">
+                <span class="text-sm">فون</span>
+                <input required name="phone" type="tel" pattern="[0-9\-\+\s]{7,}" class="px-3 py-2 rounded-md bg-slate-100 dark:bg-slate-800" />
+              </label>
+            </div>
+            <div class="flex justify-end gap-3">
+              <button data-next class="px-4 py-2 rounded-md bg-emerald-600 text-white">آگے</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Course -->
+        <div data-step class="hidden">
+          <div class="glass p-6 rounded-xl space-y-4">
+            <h2 class="text-xl font-semibold">کورس منتخب کریں</h2>
+            <label class="flex flex-col gap-1 max-w-sm">
+              <span class="text-sm">کورس</span>
+              <select id="course" name="course" class="px-3 py-2 rounded-md bg-slate-100 dark:bg-slate-800">
+                <option value="beginner">Beginners Course — 12,000</option>
+                <option value="intermediate">Intermediate — 18,000</option>
+                <option value="advanced">Advanced — 25,000</option>
+              </select>
+            </label>
+            <fieldset class="mt-2">
+              <legend class="text-sm mb-2">ایڈ آنز</legend>
+              <div class="grid sm:grid-cols-3 gap-3">
+                <label class="flex items-center gap-2"><input type="checkbox" name="addons" value="car" /> اسکول کار — 4,000</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="addons" value="night" /> نائٹ ڈرائیونگ — 2,500</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="addons" value="highway" /> ہائی وے — 3,000</label>
+              </div>
+            </fieldset>
+            <div class="flex justify-between items-center">
+              <div class="text-sm">کل قیمت: <span class="text-emerald-600 font-semibold" data-price>—</span></div>
+              <div class="flex gap-3">
+                <button data-prev class="px-4 py-2 rounded-md bg-slate-200 dark:bg-slate-800">پیچھے</button>
+                <button data-next class="px-4 py-2 rounded-md bg-emerald-600 text-white">آگے</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Date & time -->
+        <div data-step class="hidden">
+          <div class="glass p-6 rounded-xl space-y-4">
+            <h2 class="text-xl font-semibold">تاریخ اور وقت</h2>
+            <div class="grid sm:grid-cols-2 gap-4 items-end">
+              <label class="flex flex-col gap-1">
+                <span class="text-sm">تاریخ</span>
+                <input required id="date" name="date" type="date" class="px-3 py-2 rounded-md bg-slate-100 dark:bg-slate-800" />
+              </label>
+              <div>
+                <div class="text-sm">منتخب سلاٹ: <span class="font-medium" data-selected-slot>—</span></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2" data-slots></div>
+            <div class="flex justify-between">
+              <button data-prev class="px-4 py-2 rounded-md bg-slate-200 dark:bg-slate-800">پیچھے</button>
+              <button data-next class="px-4 py-2 rounded-md bg-emerald-600 text-white">آگے</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Confirm -->
+        <div data-step class="hidden">
+          <div class="glass p-6 rounded-xl space-y-4">
+            <h2 class="text-xl font-semibold">تصدیق</h2>
+            <div class="text-sm text-slate-600 dark:text-slate-300" data-summary>
+              اپنی معلومات چیک کریں، پھر جمع کریں پر کلک کریں۔
+            </div>
+            <div class="flex justify-between">
+              <button data-prev class="px-4 py-2 rounded-md bg-slate-200 dark:bg-slate-800">پیچھے</button>
+              <button type="submit" class="px-4 py-2 rounded-md bg-emerald-600 text-white">جمع کریں</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Confirmation modal -->
+      <div data-modal class="hidden fixed inset-0 z-50 grid place-items-center p-4">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative w-full max-w-md glass p-6 rounded-xl">
+          <h3 class="text-xl font-semibold mb-2">بکنگ کامیاب!</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">تفصیلات درج ذیل ہیں:</p>
+          <div class="mt-3" data-receipt></div>
+          <div class="mt-6 flex justify-end">
+            <a href="/index.html" class="px-4 py-2 rounded-md bg-emerald-600 text-white">ہوم پر جائیں</a>
+            <button data-modal-close class="ml-2 px-4 py-2 rounded-md bg-slate-200 dark:bg-slate-800">بند کریں</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 mt-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm">© 2025 Prime Driving School</p>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="/contact.html">رابطہ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/booking.js" defer></script>
+  <script>
+    // Keep the summary updated between steps
+    function updateSummary() {
+      const form = document.querySelector('#bookingForm');
+      if (!form) return;
+      const name = form.name.value || '—';
+      const phone = form.phone.value || '—';
+      const course = form.course?.value || '—';
+      const date = form.date?.value || '—';
+      const slot = document.querySelector('[data-selected-slot]')?.textContent || '—';
+      const addons = Array.from(form.querySelectorAll('input[name="addons"]:checked')).map(a => a.value).join(', ') || '—';
+      document.querySelector('[data-summary]').innerHTML = `
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>نام:</strong> ${name}</li>
+          <li><strong>فون:</strong> ${phone}</li>
+          <li><strong>کورس:</strong> ${course}</li>
+          <li><strong>تاریخ:</strong> ${date}</li>
+          <li><strong>ٹائم سلاٹ:</strong> ${slot}</li>
+          <li><strong>ایڈ آنز:</strong> ${addons}</li>
+        </ul>
+      `;
+    }
+    window.updateSummary = updateSummary;
+  </script>
+</body>
+</html>

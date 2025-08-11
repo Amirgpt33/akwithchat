@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ur" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ہمارا ڈرائیونگ اسکول | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              500: '#10b981',
+              600: '#059669'
+            }
+          },
+          fontFamily: {
+            display: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+  <header data-header class="fixed inset-x-0 top-0 z-50">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/index.html" class="flex items-center gap-2 font-semibold">
+          <span class="w-8 h-8 rounded-lg animated-gradient"></span>
+          <span>Prime Driving School</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="/index.html" class="hover:text-brand-500">ہوم</a>
+          <a href="/courses.html" class="hover:text-brand-500">کورسز</a>
+          <a href="/booking.html" class="hover:text-brand-500">بکنگ</a>
+          <a href="/contact.html" class="hover:text-brand-500">رابطہ</a>
+          <button aria-label="Theme" data-toggle-theme class="ml-2 p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-800">
+            🌗
+          </button>
+        </div>
+        <button aria-expanded="false" aria-label="Menu" data-toggle-mobile class="md:hidden p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-800">☰</button>
+      </div>
+      <div data-mobile-menu class="md:hidden hidden pb-4">
+        <div class="flex flex-col gap-2 p-3 rounded-lg glass mt-2">
+          <a href="/index.html" class="py-2">ہوم</a>
+          <a href="/courses.html" class="py-2">کورسز</a>
+          <a href="/booking.html" class="py-2">بکنگ</a>
+          <a href="/contact.html" class="py-2">رابطہ</a>
+          <button data-toggle-theme class="mt-2 py-2 rounded-md bg-slate-200 dark:bg-slate-800">تھیم تبدیل کریں</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 -z-10">
+        <div class="shape w-72 h-72 bg-emerald-500/30 left-10 top-10" data-parallax="0.08"></div>
+        <div class="shape w-80 h-80 bg-cyan-500/30 right-10 top-20" data-parallax="0.12"></div>
+        <div class="shape w-96 h-96 bg-indigo-500/30 -bottom-10 left-1/3" data-parallax="0.06"></div>
+      </div>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="reveal">
+            <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+              ڈرائیونگ سیکھیں اعتماد کے ساتھ
+            </h1>
+            <p class="mt-4 text-slate-600 dark:text-slate-300 max-w-prose">
+              جدید گاڑیوں، تجربہ کار انسٹرکٹرز اور لچکدار اوقات کے ساتھ اپنی مہارت کو
+              اگلے درجے تک لے جائیں۔ آن لائن بکنگ اور کورسز کی ورائٹی دستیاب ہے۔
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="/booking.html" class="btn-gradient inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold text-white bg-emerald-600 hover:bg-emerald-500">
+                ابھی بک کریں
+              </a>
+              <a href="/courses.html" class="inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold border border-slate-300 dark:border-slate-700 hover:border-emerald-400">
+                کورسز دیکھیں
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> لائسنس پریپ</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-500"></span> آٹو اور مینوئل</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-indigo-500"></span> خواتین انسٹرکٹرز</div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="gradient-border p-2">
+              <div class="glass p-2">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1400&auto=format&fit=crop" alt="Driving" class="rounded-xl w-full h-80 object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-8 reveal">ہم کیوں منتخب کریں؟</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="glass p-6 reveal tilt">
+            <h3 class="font-semibold">ماہر انسٹرکٹرز</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">لائسنس یافتہ اور تربیت یافتہ عملہ آپ کو بہترین سکھاتا ہے۔</p>
+          </div>
+          <div class="glass p-6 reveal tilt">
+            <h3 class="font-semibold">محفوظ گاڑیاں</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">ڈوئل کنٹرول، ایئر بیگز اور جدید سیکیورٹی فیچرز۔</p>
+          </div>
+          <div class="glass p-6 reveal tilt">
+            <h3 class="font-semibold">لچکدار اوقات</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">ہفتہ وار اور شام کے اوقات میں کلاسز دستیاب۔</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses preview -->
+    <section class="py-16 bg-slate-100 dark:bg-slate-800/40">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-end justify-between mb-6">
+          <h2 class="text-2xl font-bold reveal">مشہور کورسز</h2>
+          <a href="/courses.html" class="text-emerald-600 hover:underline">سب دیکھیں</a>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="gradient-border p-2 reveal">
+            <div class="glass p-4 rounded-xl tilt">
+              <h3 class="font-semibold">Beginners Course</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">3 ہفتے | 12 لیکچرز</p>
+              <p class="mt-3">ہمیں جوائن کریں اور بنیادی اصول سیکھیں۔</p>
+              <a href="/booking.html" class="mt-4 inline-block text-emerald-600">Enroll →</a>
+            </div>
+          </article>
+          <article class="gradient-border p-2 reveal">
+            <div class="glass p-4 rounded-xl tilt">
+              <h3 class="font-semibold">Intermediate Mastery</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">4 ہفتے | 16 لیکچرز</p>
+              <p class="mt-3">پارکنگ، ٹریفک رولز اور ہائی وے ڈرائیونگ۔</p>
+              <a href="/booking.html" class="mt-4 inline-block text-emerald-600">Enroll →</a>
+            </div>
+          </article>
+          <article class="gradient-border p-2 reveal">
+            <div class="glass p-4 rounded-xl tilt">
+              <h3 class="font-semibold">Advanced Pro</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-1">6 ہفتے | 24 لیکچرز</p>
+              <p class="mt-3">ڈیفینسو اور نائٹ ڈرائیونگ کے خصوصی اسباق۔</p>
+              <a href="/booking.html" class="mt-4 inline-block text-emerald-600">Enroll →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials slider -->
+    <section class="py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-6 reveal">ہمارے طلبہ کی رائے</h2>
+        <div class="slider reveal glass p-4 rounded-xl" data-autoplay="4500">
+          <div class="slide p-4">
+            <blockquote class="text-lg">مجھے یہاں بہترین اعتماد حاصل ہوا، انسٹرکٹرز بہت مددگار ہیں۔</blockquote>
+            <div class="mt-2 text-sm text-slate-500">— احمد</div>
+          </div>
+          <div class="slide p-4">
+            <blockquote class="text-lg">آن لائن بکنگ اور لچکدار اوقات نے سب آسان کر دیا۔</blockquote>
+            <div class="mt-2 text-sm text-slate-500">— عائشہ</div>
+          </div>
+          <div class="slide p-4">
+            <blockquote class="text-lg">ہائی وے ٹریننگ نے مجھے پروفیشنل بنا دیا۔</blockquote>
+            <div class="mt-2 text-sm text-slate-500">— بلال</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="animated-gradient rounded-2xl p-8 text-white">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div>
+              <h3 class="text-2xl font-bold">آج ہی اپنی ڈرائیونگ کا آغاز کریں</h3>
+              <p class="mt-1">پہلا ٹرائل لیسن بالکل مفت!</p>
+            </div>
+            <a href="/booking.html" class="inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold bg-black/20 hover:bg-black/30">فری ٹرائل بک کریں</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 mt-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm">© 2025 Prime Driving School</p>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="/contact.html">رابطہ</a>
+        <a href="/booking.html">بکنگ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

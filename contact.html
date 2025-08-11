@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ur" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>رابطہ | Prime Driving School</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100">
+  <header data-header class="fixed inset-x-0 top-0 z-50">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/index.html" class="flex items-center gap-2 font-semibold">
+          <span class="w-8 h-8 rounded-lg animated-gradient"></span>
+          <span>Prime Driving School</span>
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="/index.html" class="hover:text-brand-500">ہوم</a>
+          <a href="/courses.html" class="hover:text-brand-500">کورسز</a>
+          <a href="/booking.html" class="hover:text-brand-500">بکنگ</a>
+          <a href="/contact.html" class="hover:text-brand-500">رابطہ</a>
+          <button aria-label="Theme" data-toggle-theme class="ml-2 p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-800">🌗</button>
+        </div>
+        <button aria-expanded="false" aria-label="Menu" data-toggle-mobile class="md:hidden p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-800">☰</button>
+      </div>
+      <div data-mobile-menu class="md:hidden hidden pb-4">
+        <div class="flex flex-col gap-2 p-3 rounded-lg glass mt-2">
+          <a href="/index.html" class="py-2">ہوم</a>
+          <a href="/courses.html" class="py-2">کورسز</a>
+          <a href="/booking.html" class="py-2">بکنگ</a>
+          <a href="/contact.html" class="py-2">رابطہ</a>
+          <button data-toggle-theme class="mt-2 py-2 rounded-md bg-slate-200 dark:bg-slate-800">تھیم تبدیل کریں</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-24 pb-16">
+    <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h1 class="text-3xl font-bold mb-4">ہم سے رابطہ کریں</h1>
+          <p class="text-slate-600 dark:text-slate-300 mb-6">کسی بھی سوال کے لئے فارم پُر کریں۔</p>
+          <form class="glass p-6 rounded-xl space-y-4" onsubmit="event.preventDefault(); this.reset(); alert('پیغام موصول ہو گیا، شکریہ!');">
+            <label class="flex flex-col gap-1">
+              <span class="text-sm">نام</span>
+              <input required type="text" class="px-3 py-2 rounded-md bg-slate-100 dark:bg-slate-800" />
+            </label>
+            <label class="flex flex-col gap-1">
+              <span class="text-sm">ای میل</span>
+              <input required type="email" class="px-3 py-2 rounded-md bg-slate-100 dark:bg-slate-800" />
+            </label>
+            <label class="flex flex-col gap-1">
+              <span class="text-sm">آپ کا پیغام</span>
+              <textarea required rows="5" class="px-3 py-2 rounded-md bg-slate-100 dark:bg-slate-800"></textarea>
+            </label>
+            <button class="px-4 py-2 rounded-md bg-emerald-600 text-white">بھیجیں</button>
+          </form>
+
+          <div class="mt-8">
+            <h2 class="text-xl font-semibold mb-3">اکثر پوچھے گئے سوالات</h2>
+            <div class="space-y-3">
+              <div class="glass p-4 rounded-lg" data-collapsible>
+                <button class="w-full text-left font-medium" aria-expanded="false">کیا خواتین کے لئے الگ انسٹرکٹر دستیاب ہیں؟</button>
+                <div class="collapsible-content">
+                  <div class="pt-3 text-sm text-slate-600 dark:text-slate-300">جی ہاں، خواتین انسٹرکٹرز فراہم کیے جاتے ہیں۔</div>
+                </div>
+              </div>
+              <div class="glass p-4 rounded-lg" data-collapsible>
+                <button class="w-full text-left font-medium" aria-expanded="false">کیا میں اپنی گاڑی پر سیکھ سکتا/سکتی ہوں؟</button>
+                <div class="collapsible-content">
+                  <div class="pt-3 text-sm text-slate-600 dark:text-slate-300">جی ہاں، آپ اپنی کار یا اسکول کار پر سیکھ سکتے ہیں۔</div>
+                </div>
+              </div>
+              <div class="glass p-4 rounded-lg" data-collapsible>
+                <button class="w-full text-left font-medium" aria-expanded="false">ادائیگی کے کیا طریقے ہیں؟</button>
+                <div class="collapsible-content">
+                  <div class="pt-3 text-sm text-slate-600 dark:text-slate-300">کیش، بینک ٹرانسفر اور موبائل والٹس۔</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="h-80 rounded-xl overflow-hidden gradient-border p-1">
+            <div id="map" class="h-full w-full rounded-lg"></div>
+          </div>
+          <div class="mt-4 text-sm">
+            <div>📍 DHA, Karachi</div>
+            <div>☎️ 0300-1234567</div>
+            <div>⏰ 8:00am – 8:00pm</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-8 mt-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm">© 2025 Prime Driving School</p>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="/booking.html">بکنگ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script defer>
+    // Initialize Leaflet map after script loads
+    window.addEventListener('load', () => {
+      if (!window.L) return;
+      const map = L.map('map').setView([24.8138, 67.0487], 12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap'
+      }).addTo(map);
+      L.marker([24.8138, 67.0487]).addTo(map).bindPopup('Prime Driving School');
+    });
+  </script>
+</body>
+</html>
