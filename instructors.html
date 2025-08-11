@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instructors | GreenLight Driving School</title>
+  <meta name="description" content="Meet our DVSA-approved driving instructors with years of experience and top pass rates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] }, colors: { brand: '#22c55e' } } } }
+  </script>
+  <link rel="stylesheet" href="./assets/css/custom.css" />
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100">
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/70 dark:bg-gray-900/60 backdrop-blur border-b border-gray-200/70 dark:border-gray-800">
+    <div class="container-bleed flex items-center justify-between py-3">
+      <a href="/index.html" class="flex items-center gap-2">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-green-500 text-white font-bold">GL</span>
+        <span class="font-extrabold text-lg">GreenLight Driving</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a class="link-underline" href="/index.html">Home</a>
+        <a class="link-underline" href="/courses.html">Courses</a>
+        <a class="link-underline" href="/instructors.html">Instructors</a>
+        <a class="link-underline" href="/contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-gray-300/70 dark:border-gray-700 hover:shadow-glow">
+          <span class="text-sm">Theme</span>
+        </button>
+        <button data-menu-toggle aria-expanded="false" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-gray-300/70 dark:border-gray-700">
+          <span class="sr-only">Open menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+    </div>
+    <div data-mobile-nav data-open="false" class="fixed inset-y-0 right-0 z-50 w-72 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 transform translate-x-full transition-transform duration-300 md:hidden">
+      <div class="p-4 flex items-center justify-between">
+        <span class="font-semibold text-lg">Menu</span>
+        <button data-close-nav class="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-300/70 dark:border-gray-700">
+          <span class="sr-only">Close</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <nav class="flex flex-col p-4 gap-3">
+        <a data-close-nav class="px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="/index.html">Home</a>
+        <a data-close-nav class="px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="/courses.html">Courses</a>
+        <a data-close-nav class="px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="/instructors.html">Instructors</a>
+        <a data-close-nav class="px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <section data-parallax="0.3" class="hero-overlay parallax bg-cover bg-center min-h-[45vh] flex items-center" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop');">
+      <div class="container-bleed relative z-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white">Meet Our Instructors</h1>
+        <p class="mt-3 text-white/90 max-w-2xl">Experienced, friendly, and focused on your safety and confidence behind the wheel.</p>
+      </div>
+    </section>
+
+    <section class="py-16 bg-white dark:bg-gray-950">
+      <div class="container-bleed grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Instructor 1 -->
+        <div data-animate class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <img class="h-52 w-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Instructor"/>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Ahmed Khan</h3>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">10+ years, manual & automatic. Calm, structured teaching.</p>
+            <div class="mt-3 stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Instructor 2 -->
+        <div data-animate class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <img class="h-52 w-full object-cover" src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1200&auto=format&fit=crop" alt="Instructor"/>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Sara Iqbal</h3>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Expert in test prep and city driving. Great with nervous drivers.</p>
+            <div class="mt-3 stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Instructor 3 -->
+        <div data-animate class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <img class="h-52 w-full object-cover" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop" alt="Instructor"/>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Bilal Hussain</h3>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Defensive driving specialist and highway mastery.</p>
+            <div class="mt-3 stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Instructor 4 -->
+        <div data-animate class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <img class="h-52 w-full object-cover" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Instructor"/>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Ayesha Raza</h3>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Patient, bilingual, excellent with beginners.</p>
+            <div class="mt-3 stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Instructor 5 -->
+        <div data-animate class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <img class="h-52 w-full object-cover" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=1200&auto=format&fit=crop" alt="Instructor"/>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Hassan Ali</h3>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Parking maneuvers and hazard perception guru.</p>
+            <div class="mt-3 stars">★★★★★</div>
+          </div>
+        </div>
+        <!-- Instructor 6 -->
+        <div data-animate class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+          <img class="h-52 w-full object-cover" src="https://images.unsplash.com/photo-1558222214-88e69e65d0d1?q=80&w=1200&auto=format&fit=crop" alt="Instructor"/>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg">Nimra Fatima</h3>
+            <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Expert in night driving and adverse weather training.</p>
+            <div class="mt-3 stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+      <div class="container-bleed grid md:grid-cols-2 gap-8 items-center">
+        <div data-animate>
+          <h3 class="text-2xl font-extrabold">Want to learn with a specific instructor?</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-400">Tell us who you prefer and your schedule—we’ll match you up.</p>
+        </div>
+        <div class="md:justify-self-end" data-animate>
+          <a href="/contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-green-500 hover:bg-green-600 text-white font-semibold">Request Instructor</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10 border-t border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur">
+    <div class="container-bleed flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-gray-600 dark:text-gray-400">© <span id="year"></span> GreenLight Driving School</div>
+      <div class="flex gap-4 text-sm">
+        <a class="link-underline" href="/courses.html">Courses</a>
+        <a class="link-underline" href="/instructors.html">Instructors</a>
+        <a class="link-underline" href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script defer src="./assets/js/main.js"></script>
+</body>
+</html>

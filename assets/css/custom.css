@@ -1,0 +1,82 @@
+/* Custom styles to complement Tailwind */
+
+:root {
+  --brand: #22c55e; /* Tailwind green-500 */
+  --brand-dark: #16a34a; /* green-600 */
+}
+
+/* Glass card */
+.glass-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.dark .glass-card {
+  background: rgba(17, 24, 39, 0.5);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient overlay for hero sections */
+.hero-overlay {
+  position: relative;
+}
+.hero-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+}
+
+/* Scroll reveal animation classes */
+.reveal { opacity: 0; transform: translateY(18px) scale(0.98); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+.reveal.animate-in { opacity: 1; transform: translateY(0) scale(1); }
+
+/* Simple fade & slide keyframes for usage via Tailwind's arbitrary values */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Carousel base */
+.carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  transition: transform 600ms cubic-bezier(.22,1,.36,1);
+}
+
+/* Parallax helper */
+.parallax {
+  will-change: background-position;
+  background-attachment: fixed;
+}
+
+/* Fancy underline on hover */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.link-underline:hover::after { transform: scaleX(1); }
+
+/* Star rating */
+.stars { color: #fbbf24; }
+
+/* Utility to cap content width and add side padding on ultra-wide screens */
+.container-bleed {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .container-bleed { padding-inline: 2rem; }
+}

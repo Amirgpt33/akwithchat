@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenLight Driving School | Learn to Drive with Confidence</title>
+  <meta name="description" content="Professional driving lessons for beginners to advanced drivers. Certified instructors, modern cars, flexible schedules." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: { brand: '#22c55e' },
+          boxShadow: { glow: '0 0 0 3px rgba(34,197,94,.35)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./assets/css/custom.css" />
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/70 dark:bg-gray-900/60 backdrop-blur border-b border-gray-200/70 dark:border-gray-800">
+    <div class="container-bleed flex items-center justify-between py-3">
+      <a href="/index.html" class="flex items-center gap-2">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-green-500 text-white font-bold">GL</span>
+        <span class="font-extrabold text-lg">GreenLight Driving</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a class="link-underline" href="/index.html">Home</a>
+        <a class="link-underline" href="/courses.html">Courses</a>
+        <a class="link-underline" href="/instructors.html">Instructors</a>
+        <a class="link-underline" href="/contact.html">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border border-gray-300/70 dark:border-gray-700 hover:shadow-glow">
+          <span class="text-sm">Theme</span>
+        </button>
+        <button data-menu-toggle aria-expanded="false" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-md border border-gray-300/70 dark:border-gray-700">
+          <span class="sr-only">Open menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div data-mobile-nav data-open="false" class="fixed inset-y-0 right-0 z-50 w-72 bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 transform translate-x-full transition-transform duration-300 md:hidden">
+      <div class="p-4 flex items-center justify-between">
+        <span class="font-semibold text-lg">Menu</span>
+        <button data-close-nav class="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-300/70 dark:border-gray-700">
+          <span class="sr-only">Close</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <nav class="flex flex-col p-4 gap-3">
+        <a data-close-nav class="px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="/index.html">Home</a>
+        <a data-close-nav class="px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="/courses.html">Courses</a>
+        <a data-close-nav class="px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="/instructors.html">Instructors</a>
+        <a data-close-nav class="px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- Hero -->
+    <section data-parallax="0.35" class="relative hero-overlay parallax bg-cover bg-center min-h-[80vh] flex items-center" style="background-image:url('https://images.unsplash.com/photo-1483721310020-03333e577078?q=80&w=1600&auto=format&fit=crop');">
+      <div class="container-bleed relative z-10 grid md:grid-cols-2 gap-8 items-center">
+        <div data-animate>
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">Learn to Drive with Confidence</h1>
+          <p class="mt-4 text-lg text-white/90 max-w-xl">Certified instructors, modern dual-control cars, and flexible schedules to fit your life. From beginners to test prep—we've got you covered.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/courses.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-green-500 text-white font-semibold hover:bg-green-600">
+              View Courses
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </a>
+            <a href="/contact.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-white/90 text-gray-900 font-semibold hover:bg-white">
+              Book a Lesson
+            </a>
+          </div>
+          <div class="mt-6 flex items-center gap-4 text-white/90">
+            <div class="flex items-center gap-2"><span class="font-bold text-2xl">4.9</span><span class="stars">★★★★★</span></div>
+            <div class="text-sm">Trusted by 3,000+ learners</div>
+          </div>
+        </div>
+        <div data-animate class="md:justify-self-end">
+          <div class="glass-card rounded-xl p-6 md:p-8 text-white animate-[floaty_6s_ease-in-out_infinite] max-w-md">
+            <h3 class="text-xl font-semibold">Why GreenLight?</h3>
+            <ul class="mt-4 space-y-3">
+              <li class="flex gap-3"><span>✅</span><span>DVSA-approved instructors</span></li>
+              <li class="flex gap-3"><span>🚗</span><span>Dual-control modern cars</span></li>
+              <li class="flex gap-3"><span>🗓️</span><span>Flexible scheduling & fast test prep</span></li>
+              <li class="flex gap-3"><span>🏆</span><span>98% pass rate on first attempt</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white dark:bg-gray-950">
+      <div class="container-bleed grid md:grid-cols-3 gap-6">
+        <div data-animate class="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow">
+          <h3 class="font-semibold text-lg">Beginner Friendly</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-400">Step-by-step lessons tailored for newcomers, building safe habits from day one.</p>
+        </div>
+        <div data-animate class="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow">
+          <h3 class="font-semibold text-lg">Flexible Schedules</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-400">Early morning, evenings, and weekends available to fit your timetable.</p>
+        </div>
+        <div data-animate class="p-6 rounded-lg border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow">
+          <h3 class="font-semibold text-lg">Pass Guarantee</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-400">We prepare you for success with mock tests and real-world practice routes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses preview -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+      <div class="container-bleed">
+        <div class="flex items-end justify-between gap-6">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-extrabold">Popular Courses</h2>
+            <p class="mt-2 text-gray-600 dark:text-gray-400">From first-time drivers to advanced defensive driving.</p>
+          </div>
+          <a href="/courses.html" class="text-green-600 hover:text-green-700 font-semibold link-underline">See all</a>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <a data-animate href="/courses.html#beginner" class="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+            <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1512806781741-5c4f03f8b6a5?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="p-5">
+              <h3 class="font-semibold group-hover:text-green-600">Beginner Essentials</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Controls, clutch mastery, and core road rules.</p>
+            </div>
+          </a>
+          <a data-animate href="/courses.html#defensive" class="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+            <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1534237710431-e2fc698436d0?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="p-5">
+              <h3 class="font-semibold group-hover:text-green-600">Defensive Driving</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Hazard perception and proactive driving.</p>
+            </div>
+          </a>
+          <a data-animate href="/courses.html#test-prep" class="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
+            <div class="h-44 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1200&auto=format&fit=crop')"></div>
+            <div class="p-5">
+              <h3 class="font-semibold group-hover:text-green-600">Test Prep Intensive</h3>
+              <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Mock tests and examiner-level feedback.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section class="py-16 bg-white dark:bg-gray-950">
+      <div class="container-bleed">
+        <h2 class="text-2xl md:text-3xl font-extrabold">What Our Students Say</h2>
+        <div class="mt-6" data-carousel>
+          <div class="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
+            <div class="carousel-track" data-carousel-track>
+              <div data-slide class="p-8 bg-white dark:bg-gray-950">
+                <p class="text-lg italic">“Passed first try! My instructor was calm, patient, and explained everything clearly.”</p>
+                <div class="mt-4 text-sm text-gray-600 dark:text-gray-400">— Ayesha K.</div>
+              </div>
+              <div data-slide class="p-8 bg-white dark:bg-gray-950">
+                <p class="text-lg italic">“Flexible lessons around my work schedule. Loved the modern car and mock test routes.”</p>
+                <div class="mt-4 text-sm text-gray-600 dark:text-gray-400">— Fahad R.</div>
+              </div>
+              <div data-slide class="p-8 bg-white dark:bg-gray-950">
+                <p class="text-lg italic">“Great value and a supportive team. I feel confident on the road now.”</p>
+                <div class="mt-4 text-sm text-gray-600 dark:text-gray-400">— Sana I.</div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="flex items-center gap-2" data-dots></div>
+            <div class="flex gap-2">
+              <button data-prev class="px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700">Prev</button>
+              <button data-next class="px-3 py-1.5 rounded-md border border-gray-200 dark:border-gray-700">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-b from-green-50 to-white dark:from-green-900/10 dark:to-gray-950">
+      <div class="container-bleed grid md:grid-cols-2 gap-8 items-center">
+        <div data-animate>
+          <h3 class="text-2xl font-extrabold">Ready to hit the road?</h3>
+          <p class="mt-2 text-gray-600 dark:text-gray-400">Book your first lesson today and get 10% off your starter package.</p>
+        </div>
+        <div class="md:justify-self-end" data-animate>
+          <a href="/contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-green-500 hover:bg-green-600 text-white font-semibold">Book Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10 border-t border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur">
+    <div class="container-bleed flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-gray-600 dark:text-gray-400">© <span id="year"></span> GreenLight Driving School</div>
+      <div class="flex gap-4 text-sm">
+        <a class="link-underline" href="/courses.html">Courses</a>
+        <a class="link-underline" href="/instructors.html">Instructors</a>
+        <a class="link-underline" href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script defer src="./assets/js/main.js"></script>
+</body>
+</html>
